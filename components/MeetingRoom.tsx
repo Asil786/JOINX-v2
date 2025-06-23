@@ -64,12 +64,12 @@ const MeetingRoom = () => {
         </div>
       </div>
       {/* video layout and call controls */}
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
+      <div className="fixed bottom-[-15px] flex w-full flex-wrap items-center justify-center gap-3 px-2 py-3 sm:gap-5 sm:py-4">
         <CallControls onLeave={() => router.push(`/`)} />
 
         <DropdownMenu>
           <div className="flex items-center">
-            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
+            <DropdownMenuTrigger className="cursor-pointer rounded-xl bg-[#19232d] w-10 h-10 sm:px-4 sm:py-2 hover:bg-[#4c535b] flex items-center justify-center">
               <LayoutList size={20} className="text-white" />
             </DropdownMenuTrigger>
           </div>
@@ -88,12 +88,15 @@ const MeetingRoom = () => {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
+
         <CallStatsButton />
+
         <button onClick={() => setShowParticipants((prev) => !prev)}>
-          <div className=" cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
+          <div className="cursor-pointer rounded-xl bg-[#19232d] w-10 h-10 sm:px-4 sm:py-2 hover:bg-[#4c535b] flex items-center justify-center">
             <Users size={20} className="text-white" />
           </div>
         </button>
+
         {!isPersonalRoom && <EndCallButton />}
       </div>
     </section>
